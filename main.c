@@ -6,15 +6,15 @@ int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
-			int k = 1;
-			while (k <= strlen(param)) {
-				if(islower(param[k]) {
+			int k = 0;
+			while (k < strlen(param)) {
+				if(islower(param[k])) {
 					param[k] = toupper(param[k]);
 				} 
 				else if (isupper(param[k])) {
 					param[k] = tolower(param[k]);
 				}
-				putchar(param[k])
+				putchar(param[k]);
 				k++;
 			}
 		} else {
