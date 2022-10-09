@@ -22,10 +22,15 @@ int my_printf(char *format_string, char *param){
 			// if (isdigit(format_string[i+2])) {
 			// 	printf("test");
 			// }
-			
+			int kCharIndex = 0;
 			for (int numberParamIterator = 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
-				
+				if (format_string[numberParamIterator] == 'k') {
+					kCharIndex = numberParamIterator;
+				} else if (!isdigit(format_string[numberParamIterator])) {
+					break;
+				}
 			}
+			
 		} else {
 			putchar(format_string[i]);
 		}
