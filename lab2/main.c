@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
 int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
