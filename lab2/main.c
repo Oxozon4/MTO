@@ -6,16 +6,16 @@ int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
-			int k = 0;
-			while (k < strlen(param)) {
-				if(islower(param[k])) {
-					param[k] = toupper(param[k]);
+			int strIterator = 0;
+			while (strIterator < strlen(param) || j < ) {
+				if (islower(param[strIterator])) {
+					param[strIterator] = toupper(param[strIterator]);
 				} 
-				else if (isupper(param[k])) {
-					param[k] = tolower(param[k]);
+				else if (isupper(param[strIterator])) {
+					param[strIterator] = tolower(param[strIterator]);
 				}
-				putchar(param[k]);
-				k++;
+				putchar(param[strIterator]);
+				strIterator++;
 			}
 		} else {
 			putchar(format_string[i]);
