@@ -30,6 +30,10 @@ int my_printf(char *format_string, char *param){
 					break;
 				}
 			}
+			if (kCharIndex == 0) {
+				putchar(format_string[i]);
+				return;
+			}
 			
 		} else {
 			putchar(format_string[i]);
