@@ -19,7 +19,9 @@ int my_printf(char *format_string, char *param){
 				strIterator++;
 			}
 		} else if ((format_string[i] == '#') && (format_string[i+1] == '.') && (format_string[i+3] == 'k')) {
-			
+			if (isdigit(format_string[i+2])) {
+				printf("test");
+			}
 		} else {
 			putchar(format_string[i]);
 		}
