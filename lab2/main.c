@@ -34,7 +34,9 @@ int my_printf(char *format_string, char *param){
 				putchar(format_string[i]);
 				return;
 			}
-			
+			char numberArray[kCharIndex + 1];
+			strncpy(numberArray, &format_string[i + 2], kCharIndex);
+			numberArray[kCharIndex] = '\0';
 		} else {
 			putchar(format_string[i]);
 		}
