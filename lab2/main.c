@@ -7,7 +7,7 @@ int my_printf(char *format_string, char *param){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
 			int strIterator = 0;
-			while (strIterator < strlen(param) || j < ) {
+			while (strIterator < strlen(param)) {
 				if (islower(param[strIterator])) {
 					param[strIterator] = toupper(param[strIterator]);
 				} 
@@ -17,6 +17,8 @@ int my_printf(char *format_string, char *param){
 				putchar(param[strIterator]);
 				strIterator++;
 			}
+		} else if ((format_string[i] == '#') && (format_string[i+1] == '.') && (format_string[i+3] == 'k')) {
+			
 		} else {
 			putchar(format_string[i]);
 		}
