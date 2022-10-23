@@ -19,6 +19,7 @@ int my_printf(char *format_string, char *param){
 				strIterator++;
 			}
 		} else if ((format_string[i] == '#') && (format_string[i+1] == '.') && (isdigit(format_string[i+2]))) {
+			// #.Xk (%.Xs)
 			int kCharIndex = 0;
 			for (int numberParamIterator = i + 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
 				if (format_string[numberParamIterator] == 'k') {
@@ -48,6 +49,7 @@ int my_printf(char *format_string, char *param){
 			}
 			i += kCharIndex;
 		} else if ((format_string[i] == '#') && (isdigit(format_string[i + 1]))) {
+			// #Xk (%Xs)
 			int kCharIndex = 0;
 			for (int numberParamIterator = i + 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
 				if (format_string[numberParamIterator] == 'k') {
