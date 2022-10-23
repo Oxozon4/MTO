@@ -47,7 +47,7 @@ int my_printf(char *format_string, char *param){
 				strIterator++;
 			}
 			i += kCharIndex;
-		} else if ((format_string[i] == '#') && (isdigit(format_string[i+2]))) {
+		} else if ((format_string[i] == '#') && (isdigit(format_string[i + 1]))) {
 			int kCharIndex = 0;
 			for (int numberParamIterator = i + 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
 				if (format_string[numberParamIterator] == 'k') {
