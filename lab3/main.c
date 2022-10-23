@@ -72,13 +72,13 @@ int my_printf(char *format_string, char *param){
 				if (strIterator >= stringLength) {
 					putchar(' ');
 				} else {
-				if (islower(param[strIterator])) {
-					param[strIterator] = toupper(param[strIterator]);
-				} 
-				else if (isupper(param[strIterator])) {
-					param[strIterator] = tolower(param[strIterator]);
-				}
-				putchar(param[strIterator]);
+					if (islower(param[strIterator])) {
+						param[strIterator] = toupper(param[strIterator]);
+					} 
+					else if (isupper(param[strIterator])) {
+						param[strIterator] = tolower(param[strIterator]);
+					}
+					putchar(param[strIterator]);
 				}
 				strIterator++;
 			}
