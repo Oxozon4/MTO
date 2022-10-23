@@ -18,7 +18,7 @@ int my_printf(char *format_string, char *param){
 				putchar(param[strIterator]);
 				strIterator++;
 			}
-		} else if ((format_string[i] == '#') && (isdigit(format_string[i+2]))) {
+		} else if ((format_string[i] == '#') && (format_string[i+1] == '.') && (isdigit(format_string[i+2]))) {
 			int kCharIndex = 0;
 			for (int numberParamIterator = i + 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
 				if (format_string[numberParamIterator] == 'k') {
@@ -47,7 +47,7 @@ int my_printf(char *format_string, char *param){
 				strIterator++;
 			}
 			i += kCharIndex;
-		} else if ((format_string[i] == '#') && (format_string[i+1] == '.') && (isdigit(format_string[i+2]))) {
+		} else if ((format_string[i] == '#') && (isdigit(format_string[i+2]))) {
 			int kCharIndex = 0;
 			for (int numberParamIterator = i + 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
 				if (format_string[numberParamIterator] == 'k') {
@@ -67,10 +67,9 @@ int my_printf(char *format_string, char *param){
 			int strIterator = 0;
 			int stringLength = strlen(param);
 			while (strIterator < number) {
-				if (strIterator < stringLength) {
-					
-				}
-
+				if (strIterator >= stringLength) {
+					putchar(' ');
+				} else {
 				if (islower(param[strIterator])) {
 					param[strIterator] = toupper(param[strIterator]);
 				} 
@@ -78,6 +77,7 @@ int my_printf(char *format_string, char *param){
 					param[strIterator] = tolower(param[strIterator]);
 				}
 				putchar(param[strIterator]);
+				}
 				strIterator++;
 			}
 			i += kCharIndex;
