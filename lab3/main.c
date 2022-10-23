@@ -65,7 +65,7 @@ int my_printf(char *format_string, char *param){
 			numberArray[kCharIndex] = '\0';
 			int number = atoi(numberArray);
 			int strIterator = 0;
-
+			int stringLength = strlen(param);
 			i += kCharIndex;
 		} else {
 			putchar(format_string[i]);
