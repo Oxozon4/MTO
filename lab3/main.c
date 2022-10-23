@@ -65,16 +65,7 @@ int my_printf(char *format_string, char *param){
 			numberArray[kCharIndex] = '\0';
 			int number = atoi(numberArray);
 			int strIterator = 0;
-			while (strIterator < strlen(param) && strIterator < number) {
-				if (islower(param[strIterator])) {
-					param[strIterator] = toupper(param[strIterator]);
-				} 
-				else if (isupper(param[strIterator])) {
-					param[strIterator] = tolower(param[strIterator]);
-				}
-				putchar(param[strIterator]);
-				strIterator++;
-			}
+
 			i += kCharIndex;
 		} else {
 			putchar(format_string[i]);
