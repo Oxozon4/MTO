@@ -2,12 +2,14 @@
 #include <string.h>
 
 void revstr(char *str1)  {
-    int i, len, temp;  
-    len = strlen(str1);
-    for (i = 0; i < len/2; i++) {  
+    int i = 0;
+	int len = strlen(str1);
+	int temp;  
+    while (i < len/2)  {  
         temp = str1[i];
         str1[i] = str1[len - i - 1];
         str1[len - i - 1] = temp;
+		i++;
     }
 }
 
@@ -17,10 +19,9 @@ int my_printf(char *format_string, char *param){
 			i++;
 			printf("%s",param);
 		} else if ((format_string[i] == '#') && (format_string[i+1] == 'g')) {
-			i++;
-			int strIterator = 0;
 			int isParamValidNumber = 1;
-
+			int strIterator = 0;
+			i++;
 			while (strIterator < strlen(param)) {
 				if (!isdigit(param[strIterator])) {
 					isParamValidNumber = 0;
@@ -28,14 +29,12 @@ int my_printf(char *format_string, char *param){
 				}
 				strIterator++;
 			}
-
-			if (isParamValidNumber) {
-				revstr(param);
-				printf("%d", atoi(param););
-			} else {
+			if (!isParamValidNumber) {
 				puts("");
 				return 0;
 			}
+			revstr(param);
+			printf("%d", atoi(param));
 		} else
 			putchar(format_string[i]);
 	}
