@@ -87,8 +87,8 @@ int my_printf(char *format_string, char *param){
 				strIterator++;
 			}
 			i += kCharIndex;
-		} else if () {
-			
+		} else if ( (format_string[i] == '#') && (format_string[i+1] == 'd')) {
+			// #d
 		} else {
 			putchar(format_string[i]);
 		}
