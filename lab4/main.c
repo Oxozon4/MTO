@@ -10,14 +10,19 @@ int my_printf(char *format_string, char *param){
 			i++;
 			int strIterator = 0;
 			int entryArray = [];
-			while (strIterator < strlen(param) && strIterator < number) {
-				if (isdigit((atoi(param[strIterator]))) {
-					param[strIterator] = toupper(param[strIterator]);
-				} else {
-					return;
+			bool isParamValidNumber = true;
+
+			while (strIterator < strlen(param)) {
+				if (i!sdigit(param[strIterator])) {
+					isParamValidNumber = false;
+					break;
 				}
 				putchar(param[strIterator]);
 				strIterator++;
+			}
+
+			if (isParamValidNumber) {
+				printf("%d", param);
 			}
 		} else
 			putchar(format_string[i]);
