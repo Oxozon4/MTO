@@ -33,6 +33,7 @@ int my_printf(char *format_string, char *param){
 				revstr(param);
 				printf("%d", atoi(param););
 			} else {
+				puts("");
 				return 0;
 			}
 		} else
