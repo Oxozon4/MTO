@@ -32,6 +32,7 @@ int my_printf(char *format_string, char *param){
 
 			if (isParamValidNumber) {
 				revstr(param);
+				atoi(param);
 				printf("%d", param);
 			} else {
 				return 0;
