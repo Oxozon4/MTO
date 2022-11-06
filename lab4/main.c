@@ -6,7 +6,20 @@ int my_printf(char *format_string, char *param){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
 			printf("%s",param);
-		}else
+		} else if (format_string[i] == '#') && (format_string[i+1] == 'g') {
+			i++;
+			int strIterator = 0;
+			int entryArray = [];
+			while (strIterator < strlen(param) && strIterator < number) {
+				if (isdigit((atoi(param[strIterator]))) {
+					param[strIterator] = toupper(param[strIterator]);
+				} else {
+					return;
+				}
+				putchar(param[strIterator]);
+				strIterator++;
+			}
+		} else
 			putchar(format_string[i]);
 	}
 	puts("");
