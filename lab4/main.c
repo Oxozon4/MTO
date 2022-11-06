@@ -6,15 +6,14 @@ int my_printf(char *format_string, char *param){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
 			printf("%s",param);
-		} else if (format_string[i] == '#') && (format_string[i+1] == 'g') {
+		} else if ((format_string[i] == '#') && (format_string[i+1] == 'g')) {
 			i++;
 			int strIterator = 0;
-			int entryArray = [];
-			bool isParamValidNumber = true;
+			int isParamValidNumber = 1;
 
 			while (strIterator < strlen(param)) {
-				if (i!sdigit(param[strIterator])) {
-					isParamValidNumber = false;
+				if (!isdigit(param[strIterator])) {
+					isParamValidNumber = 0;
 					break;
 				}
 				putchar(param[strIterator]);
@@ -22,7 +21,8 @@ int my_printf(char *format_string, char *param){
 			}
 
 			if (isParamValidNumber) {
-				printf("%d", param);
+				char reversedString = strrev(param);
+				printf("%d", reversedString);
 			} else {
 				return 0;
 			}
