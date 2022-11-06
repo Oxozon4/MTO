@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
+void revstr(char *str1)  {
+    int i, len, temp;  
+    len = strlen(str1);
+    for (i = 0; i < len/2; i++) {  
+        temp = str1[i];
+        str1[i] = str1[len - i - 1];
+        str1[len - i - 1] = temp;
+    }
+}
+
 int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
@@ -21,8 +31,8 @@ int my_printf(char *format_string, char *param){
 			}
 
 			if (isParamValidNumber) {
-				char reversedString = strrev(param);
-				printf("%d", reversedString);
+				revstr(param);
+				printf("%d", param);
 			} else {
 				return 0;
 			}
