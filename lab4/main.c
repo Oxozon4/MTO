@@ -26,14 +26,12 @@ int my_printf(char *format_string, char *param){
 					isParamValidNumber = 0;
 					break;
 				}
-				putchar(param[strIterator]);
 				strIterator++;
 			}
 
 			if (isParamValidNumber) {
 				revstr(param);
-				atoi(param);
-				printf("%d", param);
+				printf("%d", atoi(param););
 			} else {
 				return 0;
 			}
