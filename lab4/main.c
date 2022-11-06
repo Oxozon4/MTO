@@ -23,6 +23,8 @@ int my_printf(char *format_string, char *param){
 
 			if (isParamValidNumber) {
 				printf("%d", param);
+			} else {
+				return 0;
 			}
 		} else
 			putchar(format_string[i]);
