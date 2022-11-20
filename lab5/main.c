@@ -70,6 +70,23 @@ int my_printf(char *format_string, char *param){
 				{
 					param[strIterator] = '0';
 				}
+				else if (param[strIterator] == '5')
+				{
+					param[strIterator] = '0';
+				}
+				else if (param[strIterator] == '5')
+				{
+					param[strIterator] = '0';
+				}
+				else if (param[strIterator] == '5')
+				{
+					param[strIterator] = '0';
+				}
+				else if (param[strIterator] == '5')
+				{
+					param[strIterator] = '0';
+				}
+
 
 				strIterator++;
 			}
