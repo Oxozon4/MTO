@@ -28,6 +28,7 @@ int my_printf(char *format_string, char *param){
 					isParamValidNumber = 0;
 					break;
 				}
+
 				strIterator++;
 			}
 			if (!isParamValidNumber) {
@@ -36,9 +37,24 @@ int my_printf(char *format_string, char *param){
 			}
 			revstr(param);
 			printf("%d", atoi(param));
-		}
-		else if ((format_string[i] == '#') && (format_string[i + 1] == 'g')) {
+		} else if ((format_string[i] == '#') && (format_string[i + 1] == 'X') && (format_string[i + 2] == 'g')) {
+			int isParamValidNumber = 1;
+			int strIterator = 0;
+			i++;
+			while (strIterator < strlen(param)) {
+				if (!isdigit(param[strIterator])) {
+					isParamValidNumber = 0;
+					break;
+				}
 
+				strIterator++;
+			}
+			if (!isParamValidNumber) {
+				puts("");
+				return 0;
+			}
+			revstr(param);
+			printf("%d", atoi(param));
 		} else {
 			putchar(format_string[i]);
 		}
@@ -55,3 +71,9 @@ int main(int argc, char *argv[]){
 	}
 	return 0;
 }
+
+// if (param[strIterator] === '0') {
+// 	param[strIterator] = '9';
+// } else {
+// 	param[strIterator] = atoi(param[strIterator]) - 1;
+// }
