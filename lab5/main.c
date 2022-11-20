@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 void revstr(char *str1)  {
     int i = 0;
@@ -46,6 +47,29 @@ int my_printf(char *format_string, char *param){
 					isParamValidNumber = 0;
 					break;
 				}
+				if (param[strIterator] == '0') {
+					param[strIterator] = '9';
+				}
+				else if (param[strIterator] == '1')
+				{
+					param[strIterator] = '0';
+				}
+				else if (param[strIterator] == '2')
+				{
+					param[strIterator] = '1';
+				}
+				else if (param[strIterator] == '3')
+				{
+					param[strIterator] = '2';
+				}
+				else if (param[strIterator] == '4')
+				{
+					param[strIterator] = '3';
+				}
+				else if (param[strIterator] == '5')
+				{
+					param[strIterator] = '0';
+				}
 
 				strIterator++;
 			}
@@ -53,7 +77,6 @@ int my_printf(char *format_string, char *param){
 				puts("");
 				return 0;
 			}
-			revstr(param);
 			printf("%d", atoi(param));
 		} else {
 			putchar(format_string[i]);
@@ -72,8 +95,3 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 
-// if (param[strIterator] === '0') {
-// 	param[strIterator] = '9';
-// } else {
-// 	param[strIterator] = atoi(param[strIterator]) - 1;
-// }
