@@ -68,23 +68,23 @@ int my_printf(char *format_string, char *param){
 				}
 				else if (param[strIterator] == '5')
 				{
-					param[strIterator] = '0';
+					param[strIterator] = '4';
 				}
-				else if (param[strIterator] == '5')
+				else if (param[strIterator] == '6')
 				{
-					param[strIterator] = '0';
+					param[strIterator] = '5';
 				}
-				else if (param[strIterator] == '5')
+				else if (param[strIterator] == '7')
 				{
-					param[strIterator] = '0';
+					param[strIterator] = '6';
 				}
-				else if (param[strIterator] == '5')
+				else if (param[strIterator] == '8')
 				{
-					param[strIterator] = '0';
+					param[strIterator] = '7';
 				}
-				else if (param[strIterator] == '5')
+				else if (param[strIterator] == '9')
 				{
-					param[strIterator] = '0';
+					param[strIterator] = '8';
 				}
 
 
