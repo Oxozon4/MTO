@@ -49,45 +49,25 @@ int my_printf(char *format_string, char *param){
 				}
 				if (param[strIterator] == '0') {
 					param[strIterator] = '9';
-				}
-				else if (param[strIterator] == '1')
-				{
+				} else if (param[strIterator] == '1') {
 					param[strIterator] = '0';
-				}
-				else if (param[strIterator] == '2')
-				{
+				} else if (param[strIterator] == '2') {
 					param[strIterator] = '1';
-				}
-				else if (param[strIterator] == '3')
-				{
+				} else if (param[strIterator] == '3') {
 					param[strIterator] = '2';
-				}
-				else if (param[strIterator] == '4')
-				{
+				} else if (param[strIterator] == '4') {
 					param[strIterator] = '3';
-				}
-				else if (param[strIterator] == '5')
-				{
+				} else if (param[strIterator] == '5') {
 					param[strIterator] = '4';
-				}
-				else if (param[strIterator] == '6')
-				{
+				} else if (param[strIterator] == '6') {
 					param[strIterator] = '5';
-				}
-				else if (param[strIterator] == '7')
-				{
+				} else if (param[strIterator] == '7') {
 					param[strIterator] = '6';
-				}
-				else if (param[strIterator] == '8')
-				{
+				} else if (param[strIterator] == '8') {
 					param[strIterator] = '7';
-				}
-				else if (param[strIterator] == '9')
-				{
+				} else if (param[strIterator] == '9') {
 					param[strIterator] = '8';
 				}
-
-
 				strIterator++;
 			}
 			if (!isParamValidNumber) {
