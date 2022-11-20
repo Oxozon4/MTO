@@ -51,6 +51,19 @@ int my_printf(char *format_string, char *param){
 				putchar(format_string[i]);
 				return 0;
 			}
+			
+			char numberArray[kCharIndex + 1];
+			strncpy(numberArray, &format_string[i + 2], kCharIndex);
+			numberArray[kCharIndex] = '\0';
+			int number = atoi(numberArray);
+			int stringLength = strlen(param);
+			if (number > stringLength) {
+				int paddedSpaces = number - stringLength;
+				while (paddedSpaces > 0) {
+					putchar(' ');
+					paddedSpaces--;
+				}
+			}
 
 			int isParamValidNumber = 1;
 			int strIterator = 0;
@@ -83,6 +96,7 @@ int my_printf(char *format_string, char *param){
 				}
 				strIterator++;
 			}
+			// check for only number
 			if (!isParamValidNumber) {
 				puts("");
 				return 0;
