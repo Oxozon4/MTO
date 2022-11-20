@@ -23,14 +23,10 @@ int my_printf(char *format_string, char *param){
 			int isParamValidNumber = 1;
 			int strIterator = 0;
 			i++;
-			
 			while (strIterator < strlen(param)) {
 				if (!isdigit(param[strIterator])) {
 					isParamValidNumber = 0;
 					break;
-				}
-				if (param[strIterator] === 0) {
-					
 				}
 				strIterator++;
 			}
@@ -40,8 +36,12 @@ int my_printf(char *format_string, char *param){
 			}
 			revstr(param);
 			printf("%d", atoi(param));
-		} else
+		}
+		else if ((format_string[i] == '#') && (format_string[i + 1] == 'g')) {
+
+		} else {
 			putchar(format_string[i]);
+		}
 	}
 	puts("");
 	return 0;
