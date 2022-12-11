@@ -122,6 +122,13 @@ int my_printf(char *format_string, char *param){
 			int number = atoi(numberArray);
 			int strIterator = 0;
 			int stringLength = strlen(param);
+			if (number > stringLength) {
+				int paddedSpaces = number - stringLength;
+				while (paddedSpaces > 0) {
+					putchar(' ');
+					paddedSpaces--;
+				}
+			}
 			
 		} else {
 			putchar(format_string[i]);
