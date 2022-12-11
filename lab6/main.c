@@ -103,7 +103,19 @@ int my_printf(char *format_string, char *param){
 			}
 			printf("%d", atoi(param));
 		} else if ((format_string[i] == '#') && (format_string[i] == '.') isdigit(format_string[i + 1])) {
-
+			// #Xk (%Xs)
+			int kCharIndex = 0;
+			for (int numberParamIterator = i + 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
+				if (format_string[numberParamIterator] == 'g') {
+					kCharIndex = numberParamIterator;
+				} else if (!isdigit(format_string[numberParamIterator])) {
+					break;
+				}
+			}
+			if (kCharIndex == 0) {
+				putchar(format_string[i]);
+				return 0;
+			}
 		} else {
 			putchar(format_string[i]);
 		}
