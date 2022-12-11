@@ -123,10 +123,10 @@ int my_printf(char *format_string, char *param){
 			int strIterator = 0;
 			int stringLength = strlen(param);
 			if (number > stringLength) {
-				int paddedSpaces = number - stringLength;
-				while (paddedSpaces > 0) {
-					putchar(' ');
-					paddedSpaces--;
+				int paddedZeros = number - stringLength;
+				while (paddedZeros > 0) {
+					putchar('9');
+					paddedZeros--;
 				}
 			}
 			while (strIterator < strlen(param)) {
