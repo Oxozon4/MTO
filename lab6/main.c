@@ -129,7 +129,11 @@ int my_printf(char *format_string, char *param){
 					paddedSpaces--;
 				}
 			}
-			
+			while (strIterator < strlen(param)) {
+				putchar(param[strIterator]);
+				strIterator++;
+			}
+			i += kCharIndex;
 		} else {
 			putchar(format_string[i]);
 		}
