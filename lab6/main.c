@@ -58,10 +58,10 @@ int my_printf(char *format_string, char *param){
 			int number = atoi(numberArray);
 			int stringLength = strlen(param);
 			if (number > stringLength) {
-				int paddedSpaces = number - stringLength;
-				while (paddedSpaces > 0) {
-					putchar(' ');
-					paddedSpaces--;
+				int paddedZeros = number - stringLength;
+				while (paddedZeros > 0) {
+					putchar('0');
+					paddedZeros--;
 				}
 			}
 
