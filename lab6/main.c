@@ -102,7 +102,7 @@ int my_printf(char *format_string, char *param){
 				return 0;
 			}
 			printf("%d", atoi(param));
-		} else if ((format_string[i] == '#') && (format_string[i] == '.') isdigit(format_string[i + 1])) {
+		} else if ((format_string[i] == '#') && (format_string[i + 1] == '.') && isdigit(format_string[i + 1])) {
 			// #.Xg (%Xd)
 			int kCharIndex = 0;
 			for (int numberParamIterator = i + 2; numberParamIterator < strlen(format_string); numberParamIterator++) {
@@ -121,6 +121,7 @@ int my_printf(char *format_string, char *param){
 			numberArray[kCharIndex] = '\0';
 			int number = atoi(numberArray);
 			int strIterator = 0;
+			int isParamValidNumber = 1;
 			int stringLength = strlen(param);
 			if (number > stringLength) {
 				int paddedZeros = number - stringLength;
