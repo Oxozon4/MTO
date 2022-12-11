@@ -102,6 +102,8 @@ int my_printf(char *format_string, char *param){
 				return 0;
 			}
 			printf("%d", atoi(param));
+		} else if ((format_string[i] == '#') && (format_string[i] == '.') isdigit(format_string[i + 1])) {
+
 		} else {
 			putchar(format_string[i]);
 		}
