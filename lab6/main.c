@@ -158,6 +158,11 @@ int my_printf(char *format_string, char *param){
 				}
 				strIterator++;
 			}
+			// check for only number
+			if (!isParamValidNumber) {
+				puts("");
+				return 0;
+			}
 			printf("%d", atoi(param));
 			i += kCharIndex;
 		} else {
