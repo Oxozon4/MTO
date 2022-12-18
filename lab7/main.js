@@ -15,6 +15,12 @@ function my_printf(format_string, param) {
     ) {
       if (!isNaN(param)) {
         const hexOutput = parseInt(param).toString(16);
+        hexOutput.replaceAll('a', 'g');
+        hexOutput.replaceAll('b', 'h');
+        hexOutput.replaceAll('c', 'i');
+        hexOutput.replaceAll('d', 'j');
+        hexOutput.replaceAll('e', 'k');
+        hexOutput.replaceAll('f', 'l');
         process.stdout.write(hexOutput);
       }
       i++;
