@@ -22,7 +22,11 @@ process.stdin.on('data', function (chunk) {
   lines[0] = lingeringLine + lines[0];
   lingeringLine = lines.pop();
   for (var i = 0; i < lines.length; i++) {
-    my_printf(lines[i], lines[i + 1]);
+    try {
+      my_printf(lines[i], lines[i + 1]);
+    } catch (e) {
+      // error
+    }
     i++;
   }
 });
