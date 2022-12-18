@@ -13,7 +13,7 @@ function my_printf(format_string, param) {
       format_string.charAt(i) === '#' &&
       format_string.charAt(i + 1) === 'j'
     ) {
-      if (!isNaN(param)) {
+      if (!isNaN(param) && Number.isInteger(Number(param))) {
         const hexOutput = parseInt(param).toString(16);
         hexOutput.replace(/a/gi, 'g');
         hexOutput.replace(/b/gi, 'h');
