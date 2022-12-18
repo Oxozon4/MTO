@@ -13,6 +13,8 @@ function my_printf(format_string, param) {
       format_string.charAt(i) === '#' &&
       format_string.charAt(i + 1) === 'j'
     ) {
+			const regex = var regex = /[0-9A-Fa-f]{6}/g;
+			if ()
     } else {
       process.stdout.write(format_string.charAt(i));
     }
