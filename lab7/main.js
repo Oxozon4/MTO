@@ -9,6 +9,10 @@ function my_printf(format_string, param) {
     if (format_string.charAt(i) == '#' && format_string.charAt(i + 1) == 'k') {
       process.stdout.write(param);
       i++;
+    } else if (
+      format_string.charAt(i) === '#' &&
+      format_string.charAt(i + 1) === 'j'
+    ) {
     } else {
       process.stdout.write(format_string.charAt(i));
     }
