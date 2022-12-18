@@ -14,6 +14,8 @@ function my_printf(format_string, param) {
       format_string.charAt(i + 1) === 'j'
     ) {
       if (!isNaN(param)) {
+        const hexOutput = parseInt(param).toString(16);
+        process.stdout.write(hexOutput);
       }
     } else {
       process.stdout.write(format_string.charAt(i));
