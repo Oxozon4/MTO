@@ -4,6 +4,16 @@ process.stdin.setEncoding('utf8');
 
 var lingeringLine = '';
 
+const getSubstringBetween = (str, part1, part2) => {
+  const startIndex = str.indexOf(part1) + part1.length;
+  const endIndex = str.indexOf(part2, startIndex);
+  const stringBetween = str.substring(startIndex, endIndex);
+  if (!isNaN(stringBetween) && Number.isInteger(Number(stringBetween))) {
+    return parseInt(stringBetween);
+  }
+  return null;
+};
+
 function my_printf(format_string, param) {
   for (var i = 0; i < format_string.length; i++) {
     if (format_string.charAt(i) == '#' && format_string.charAt(i + 1) == 'k') {
@@ -16,7 +26,11 @@ function my_printf(format_string, param) {
       if (!format_string.includes('x')) {
         process.stdout.write(param);
         i++;
+        continue;
       }
+      // #.5x 1
+      // oooo1
+      const precisionNumber = getSubstringBetween(format_string, '#.', '');
       if (!isNaN(param) && Number.isInteger(Number(param))) {
         const hexOutput = parseInt(param).toString(16);
         hexOutput.replace(/a/gi, 'g');
