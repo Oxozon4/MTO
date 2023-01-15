@@ -13,7 +13,7 @@ function my_printf(format_string, param) {
       format_string.charAt(i) === '#' &&
       format_string.charAt(i + 1) === '.'
     ) {
-      if (format_string.includes('x')) {
+      if (!format_string.includes('x')) {
         process.stdout.write(param);
         i++;
       }
