@@ -11,8 +11,12 @@ function my_printf(format_string, param) {
       i++;
     } else if (
       format_string.charAt(i) === '#' &&
-      format_string.charAt(i + 1) === 'j'
+      format_string.charAt(i + 1) === '.'
     ) {
+      if (format_string.includes('x')) {
+        process.stdout.write(param);
+        i++;
+      }
       if (!isNaN(param) && Number.isInteger(Number(param))) {
         const hexOutput = parseInt(param).toString(16);
         hexOutput.replace(/a/gi, 'g');
