@@ -30,9 +30,14 @@ function my_printf(format_string, param) {
       }
       // #.5x 1
       // oooo1
-      const precisionNumber = getPrecisionNumber(format_string, '#.', '');
       if (!isNaN(param) && Number.isInteger(Number(param))) {
+        const precisionNumber = getPrecisionNumber(format_string, '#.', 'x');
         const hexOutput = parseInt(param).toString(16);
+        const missingPadding = precisionNumber - hexOutput.length;
+        while (missingPadding > 0) {
+          process.stdout.write('o');
+          missingPadding -= 1;
+        }
         hexOutput.replace(/a/gi, 'g');
         hexOutput.replace(/b/gi, 'h');
         hexOutput.replace(/c/gi, 'i');
