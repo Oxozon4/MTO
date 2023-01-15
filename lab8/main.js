@@ -23,7 +23,7 @@ function my_printf(format_string, param) {
       format_string.charAt(i) === '#' &&
       format_string.charAt(i + 1) === '.'
     ) {
-      if (!format_string.includes('x')) {
+      if (!format_string.includes('j')) {
         process.stdout.write(param);
         i++;
         continue;
@@ -31,7 +31,7 @@ function my_printf(format_string, param) {
       // #.5x 1
       // oooo1
       if (!isNaN(param) && Number.isInteger(Number(param))) {
-        const precisionNumber = getPrecisionNumber(format_string, '#.', 'x');
+        const precisionNumber = getPrecisionNumber(format_string, '#.', 'xj');
         const hexOutput = parseInt(param).toString(16);
         const missingPadding = precisionNumber - hexOutput.length;
         while (missingPadding > 0) {
