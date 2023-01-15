@@ -4,7 +4,7 @@ process.stdin.setEncoding('utf8');
 
 var lingeringLine = '';
 
-const getSubstringBetween = (str, part1, part2) => {
+const getPrecisionNumber = (str, part1, part2) => {
   const startIndex = str.indexOf(part1) + part1.length;
   const endIndex = str.indexOf(part2, startIndex);
   const stringBetween = str.substring(startIndex, endIndex);
@@ -30,7 +30,7 @@ function my_printf(format_string, param) {
       }
       // #.5x 1
       // oooo1
-      const precisionNumber = getSubstringBetween(format_string, '#.', '');
+      const precisionNumber = getPrecisionNumber(format_string, '#.', '');
       if (!isNaN(param) && Number.isInteger(Number(param))) {
         const hexOutput = parseInt(param).toString(16);
         hexOutput.replace(/a/gi, 'g');
